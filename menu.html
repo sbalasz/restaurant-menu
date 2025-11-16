@@ -247,6 +247,8 @@
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
             border: 3px double #FFD700;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         #allergen-chart h2 {
@@ -256,17 +258,50 @@
             font-size: 2rem;
         }
 
+        .table-wrapper {
+            overflow-x: auto;
+            width: 100%;
+            -webkit-overflow-scrolling: touch;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 15px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            min-width: 1000px;
+            table-layout: auto;
         }
 
         th, td {
             border: 1px solid #DAA520;
-            padding: 10px;
+            padding: 8px 6px;
             text-align: center;
+            white-space: nowrap;
+        }
+
+        th:first-child,
+        td:first-child {
+            position: sticky;
+            left: 0;
+            background: inherit;
+            z-index: 10;
+            min-width: 150px;
+            text-align: left;
+            padding-left: 10px;
+        }
+
+        th:first-child {
+            background: #8B0000;
+            color: #FFD700;
+        }
+
+        tr:nth-child(even) td:first-child {
+            background: #fffef0;
+        }
+
+        tr:nth-child(odd) td:first-child {
+            background: #fffef7;
         }
 
         th {
@@ -306,12 +341,46 @@
             .menu-grid { grid-template-columns: 1fr; }
             .section-title { font-size: 1.8rem; }
             header { padding: 80px 15px; }
+            #allergen-chart {
+                padding: 20px 15px;
+                margin: 40px 10px;
+            }
+            table {
+                font-size: 0.75rem;
+                min-width: 900px;
+            }
+            th, td {
+                padding: 6px 4px;
+            }
+            th:first-child,
+            td:first-child {
+                min-width: 120px;
+            }
         }
 
         @media (max-width: 480px) {
             .item-name { flex-direction: column; align-items: flex-start; }
             .price { margin-top: 5px; }
             .tags { justify-content: center; }
+            #allergen-chart {
+                padding: 15px 10px;
+                margin: 30px 5px;
+            }
+            #allergen-chart h2 {
+                font-size: 1.5rem;
+            }
+            table {
+                font-size: 0.7rem;
+                min-width: 800px;
+            }
+            th, td {
+                padding: 5px 3px;
+            }
+            th:first-child,
+            td:first-child {
+                min-width: 100px;
+                font-size: 0.65rem;
+            }
         }
 
         /* Animation */
@@ -783,6 +852,7 @@
         <p style="text-align:center; margin-bottom:20px; color:#666;">
             Please inform staff of any allergies. We take every care, but traces may be present.
         </p>
+        <div class="table-wrapper">
         <table>
             <thead>
                 <tr>
@@ -846,6 +916,7 @@
                 <tr><td>Vegetable Sausage</td><td></td><td class="allergen-present">Wheat</td><td></td><td></td><td></td><td></td><td class="allergen-present">Milk</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
             </tbody>
         </table>
+        </div>
         <p class="note">
             **Cereals containing gluten: Wheat, Barley, Rye, Oats<br>
             *Nuts: Almonds, Hazelnuts, Walnuts, Cashews, Pecan, Brazil, Pistachio, Macadamia, Queensland<br>
