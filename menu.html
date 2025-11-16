@@ -236,14 +236,51 @@
 
         /* Sub-options (for protein choices) */
         .sub-options {
-            margin-top: 10px;
-            padding-left: 15px;
-            border-left: 2px dashed #DAA520;
+            margin-top: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
 
-        .sub-item {
-            margin: 6px 0;
-            font-size: 0.95rem;
+        .protein-option {
+            background: rgba(255, 215, 0, 0.05);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 0;
+        }
+
+        .protein-option-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+
+        .protein-name {
+            font-weight: 600;
+            font-size: 1rem;
+            color: #2c1810;
+        }
+
+        .protein-price {
+            color: #8B0000;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .protein-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+            margin-top: 6px;
+        }
+
+        .protein-allergen {
+            font-size: 0.8rem;
+            color: #DC143C;
+            font-style: italic;
         }
 
         /* Allergen Chart */
@@ -521,14 +558,45 @@
                 <div class="item-description">Aromatic Thai curry in rich coconut milk with Thai basil, bamboo shoots, and aubergine. Green curry offers a fresh, herbal heat while red curry provides a deeper, spicier flavour.</div>
                 <div class="spiciness">🌶️🌶️</div>
                 <div class="sub-options">
-                    <div class="sub-item">• Tofu <span class="price">£14.95</span> — Soybean <span class="tag vegan">Vegan</span> <span class="tag gf">GF</span></div>
-                    <div class="sub-item">• Chicken <span class="price">£14.95</span> <span class="tag gf">GF</span></div>
-                    <div class="sub-item">• Beef <span class="price">£15.95</span> <span class="tag gf">GF</span></div>
-                    <div class="sub-item">• Prawn <span class="price">£15.95</span> — Crustacean <span class="tag gf">GF</span></div>
-                </div>
-                <div class="allergens-section">
-                    <div class="allergens-label">Allergens:</div>
-                    <div class="allergens-list">Varies by protein choice (see options above)</div>
+                    <div class="protein-option">
+                        <div class="protein-option-header">
+                            <span class="protein-name">Tofu</span>
+                            <span class="protein-price">£14.95</span>
+                        </div>
+                        <div class="protein-details">
+                            <span class="protein-allergen">Soybean</span>
+                            <span class="tag vegan">Vegan</span>
+                            <span class="tag gf">GF</span>
+                        </div>
+                    </div>
+                    <div class="protein-option">
+                        <div class="protein-option-header">
+                            <span class="protein-name">Chicken</span>
+                            <span class="protein-price">£14.95</span>
+                        </div>
+                        <div class="protein-details">
+                            <span class="tag gf">GF</span>
+                        </div>
+                    </div>
+                    <div class="protein-option">
+                        <div class="protein-option-header">
+                            <span class="protein-name">Beef</span>
+                            <span class="protein-price">£15.95</span>
+                        </div>
+                        <div class="protein-details">
+                            <span class="tag gf">GF</span>
+                        </div>
+                    </div>
+                    <div class="protein-option">
+                        <div class="protein-option-header">
+                            <span class="protein-name">Prawn</span>
+                            <span class="protein-price">£15.95</span>
+                        </div>
+                        <div class="protein-details">
+                            <span class="protein-allergen">Crustacean</span>
+                            <span class="tag gf">GF</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -552,10 +620,41 @@
                 <div class="item-description">Fiery stir-fry with Thai holy basil, fresh chillies, garlic, and your choice of protein. A classic Thai street food favourite with bold, aromatic flavours.</div>
                 <div class="spiciness">🌶️🌶️🌶️</div>
                 <div class="sub-options">
-                    <div class="sub-item">• Tofu <span class="price">£14.95</span> — Soybean <span class="tag vegan">Vegan</span></div>
-                    <div class="sub-item">• Chicken <span class="price">£14.95</span></div>
-                    <div class="sub-item">• Beef <span class="price">£15.95</span></div>
-                    <div class="sub-item">• Prawn <span class="price">£15.95</span> — Crustacean</div>
+                    <div class="protein-option">
+                        <div class="protein-option-header">
+                            <span class="protein-name">Tofu</span>
+                            <span class="protein-price">£14.95</span>
+                        </div>
+                        <div class="protein-details">
+                            <span class="protein-allergen">Soybean</span>
+                            <span class="tag vegan">Vegan</span>
+                        </div>
+                    </div>
+                    <div class="protein-option">
+                        <div class="protein-option-header">
+                            <span class="protein-name">Chicken</span>
+                            <span class="protein-price">£14.95</span>
+                        </div>
+                        <div class="protein-details">
+                        </div>
+                    </div>
+                    <div class="protein-option">
+                        <div class="protein-option-header">
+                            <span class="protein-name">Beef</span>
+                            <span class="protein-price">£15.95</span>
+                        </div>
+                        <div class="protein-details">
+                        </div>
+                    </div>
+                    <div class="protein-option">
+                        <div class="protein-option-header">
+                            <span class="protein-name">Prawn</span>
+                            <span class="protein-price">£15.95</span>
+                        </div>
+                        <div class="protein-details">
+                            <span class="protein-allergen">Crustacean</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="allergens-section">
                     <div class="allergens-label">Allergens:</div>
@@ -568,10 +667,41 @@
                 <div class="item-description">Savory stir-fry with mixed vegetables in a rich, umami-packed oyster sauce. A mild and satisfying dish perfect for those who prefer less spice.</div>
                 <div class="spiciness"></div>
                 <div class="sub-options">
-                    <div class="sub-item">• Tofu <span class="price">£14.95</span> — Soybean <span class="tag vegan">Vegan</span></div>
-                    <div class="sub-item">• Chicken <span class="price">£14.95</span></div>
-                    <div class="sub-item">• Beef <span class="price">£15.95</span></div>
-                    <div class="sub-item">• Prawn <span class="price">£15.95</span> — Crustacean</div>
+                    <div class="protein-option">
+                        <div class="protein-option-header">
+                            <span class="protein-name">Tofu</span>
+                            <span class="protein-price">£14.95</span>
+                        </div>
+                        <div class="protein-details">
+                            <span class="protein-allergen">Soybean</span>
+                            <span class="tag vegan">Vegan</span>
+                        </div>
+                    </div>
+                    <div class="protein-option">
+                        <div class="protein-option-header">
+                            <span class="protein-name">Chicken</span>
+                            <span class="protein-price">£14.95</span>
+                        </div>
+                        <div class="protein-details">
+                        </div>
+                    </div>
+                    <div class="protein-option">
+                        <div class="protein-option-header">
+                            <span class="protein-name">Beef</span>
+                            <span class="protein-price">£15.95</span>
+                        </div>
+                        <div class="protein-details">
+                        </div>
+                    </div>
+                    <div class="protein-option">
+                        <div class="protein-option-header">
+                            <span class="protein-name">Prawn</span>
+                            <span class="protein-price">£15.95</span>
+                        </div>
+                        <div class="protein-details">
+                            <span class="protein-allergen">Crustacean</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="allergens-section">
                     <div class="allergens-label">Allergens:</div>
@@ -584,10 +714,41 @@
                 <div class="item-description">Stir-fried with roasted cashew nuts, bell peppers, onions, and water chestnuts in a sweet and savoury brown sauce. A delightful combination of textures and flavours.</div>
                 <div class="spiciness">🌶️</div>
                 <div class="sub-options">
-                    <div class="sub-item">• Tofu <span class="price">£14.95</span> — Soybean <span class="tag vegan">Vegan</span></div>
-                    <div class="sub-item">• Chicken <span class="price">£14.95</span></div>
-                    <div class="sub-item">• Beef <span class="price">£15.95</span></div>
-                    <div class="sub-item">• Prawn <span class="price">£15.95</span> — Crustacean</div>
+                    <div class="protein-option">
+                        <div class="protein-option-header">
+                            <span class="protein-name">Tofu</span>
+                            <span class="protein-price">£14.95</span>
+                        </div>
+                        <div class="protein-details">
+                            <span class="protein-allergen">Soybean</span>
+                            <span class="tag vegan">Vegan</span>
+                        </div>
+                    </div>
+                    <div class="protein-option">
+                        <div class="protein-option-header">
+                            <span class="protein-name">Chicken</span>
+                            <span class="protein-price">£14.95</span>
+                        </div>
+                        <div class="protein-details">
+                        </div>
+                    </div>
+                    <div class="protein-option">
+                        <div class="protein-option-header">
+                            <span class="protein-name">Beef</span>
+                            <span class="protein-price">£15.95</span>
+                        </div>
+                        <div class="protein-details">
+                        </div>
+                    </div>
+                    <div class="protein-option">
+                        <div class="protein-option-header">
+                            <span class="protein-name">Prawn</span>
+                            <span class="protein-price">£15.95</span>
+                        </div>
+                        <div class="protein-details">
+                            <span class="protein-allergen">Crustacean</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="allergens-section">
                     <div class="allergens-label">Allergens:</div>
@@ -604,13 +765,37 @@
                 <div class="item-description">Thailand's most famous noodle dish! Stir-fried rice noodles with tamarind, fish sauce, and palm sugar, topped with bean sprouts, crushed peanuts, and lime. A perfect balance of sweet, sour, and savoury.</div>
                 <div class="spiciness">🌶️</div>
                 <div class="sub-options">
-                    <div class="sub-item">• Tofu <span class="price">£12.95</span> — Soybean <span class="tag vegan">Vegan</span> <span class="tag gf">GF</span></div>
-                    <div class="sub-item">• Chicken <span class="price">£12.95</span> — Egg <span class="tag gf">GF</span></div>
-                    <div class="sub-item">• Prawn <span class="price">£13.95</span> — Crustacean <span class="tag gf">GF</span></div>
-                </div>
-                <div class="allergens-section">
-                    <div class="allergens-label">Allergens:</div>
-                    <div class="allergens-list">Varies by protein choice (see options above)</div>
+                    <div class="protein-option">
+                        <div class="protein-option-header">
+                            <span class="protein-name">Tofu</span>
+                            <span class="protein-price">£12.95</span>
+                        </div>
+                        <div class="protein-details">
+                            <span class="protein-allergen">Soybean</span>
+                            <span class="tag vegan">Vegan</span>
+                            <span class="tag gf">GF</span>
+                        </div>
+                    </div>
+                    <div class="protein-option">
+                        <div class="protein-option-header">
+                            <span class="protein-name">Chicken</span>
+                            <span class="protein-price">£12.95</span>
+                        </div>
+                        <div class="protein-details">
+                            <span class="protein-allergen">Egg</span>
+                            <span class="tag gf">GF</span>
+                        </div>
+                    </div>
+                    <div class="protein-option">
+                        <div class="protein-option-header">
+                            <span class="protein-name">Prawn</span>
+                            <span class="protein-price">£13.95</span>
+                        </div>
+                        <div class="protein-details">
+                            <span class="protein-allergen">Crustacean</span>
+                            <span class="tag gf">GF</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -619,9 +804,33 @@
                 <div class="item-description">Wide flat rice noodles stir-fried with Thai basil, fresh chillies, and vegetables in a spicy sauce. Named for its ability to cure a hangover, this dish packs serious heat and flavour!</div>
                 <div class="spiciness">🌶️🌶️🌶️</div>
                 <div class="sub-options">
-                    <div class="sub-item">• Tofu <span class="price">£12.95</span> — Soybean <span class="tag vegan">Vegan</span></div>
-                    <div class="sub-item">• Chicken <span class="price">£12.95</span></div>
-                    <div class="sub-item">• Prawn <span class="price">£13.95</span> — Crustacean</div>
+                    <div class="protein-option">
+                        <div class="protein-option-header">
+                            <span class="protein-name">Tofu</span>
+                            <span class="protein-price">£12.95</span>
+                        </div>
+                        <div class="protein-details">
+                            <span class="protein-allergen">Soybean</span>
+                            <span class="tag vegan">Vegan</span>
+                        </div>
+                    </div>
+                    <div class="protein-option">
+                        <div class="protein-option-header">
+                            <span class="protein-name">Chicken</span>
+                            <span class="protein-price">£12.95</span>
+                        </div>
+                        <div class="protein-details">
+                        </div>
+                    </div>
+                    <div class="protein-option">
+                        <div class="protein-option-header">
+                            <span class="protein-name">Prawn</span>
+                            <span class="protein-price">£13.95</span>
+                        </div>
+                        <div class="protein-details">
+                            <span class="protein-allergen">Crustacean</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="allergens-section">
                     <div class="allergens-label">Allergens:</div>
