@@ -809,7 +809,7 @@
             margin: 60px auto;
             max-width: 1200px;
             background: #fff;
-            padding: 30px;
+            padding: 25px 20px;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
             border: 3px double #FFD700;
@@ -821,7 +821,7 @@
             text-align: center;
             color: #8B0000;
             margin-bottom: 20px;
-            font-size: 2rem;
+            font-size: 1.8rem;
         }
 
         .table-wrapper {
@@ -834,14 +834,14 @@
             width: 100%;
             border-collapse: collapse;
             margin-top: 15px;
-            font-size: 0.85rem;
-            min-width: 1000px;
+            font-size: 0.7rem;
+            min-width: 900px;
             table-layout: auto;
         }
 
         th, td {
             border: 1px solid #DAA520;
-            padding: 8px 6px;
+            padding: 6px 4px;
             text-align: center;
             white-space: nowrap;
         }
@@ -852,9 +852,14 @@
             left: 0;
             background: inherit;
             z-index: 10;
-            min-width: 150px;
+            min-width: 140px;
+            max-width: 200px;
             text-align: left;
-            padding-left: 10px;
+            padding-left: 8px;
+            padding-right: 8px;
+            font-size: 0.7rem;
+            white-space: normal;
+            word-wrap: break-word;
         }
 
         th:first-child {
@@ -874,8 +879,10 @@
             background: #8B0000;
             color: #FFD700;
             font-weight: 600;
+            font-size: 0.65rem;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
+            line-height: 1.2;
         }
 
         td {
@@ -886,6 +893,7 @@
             background: #ffcccc;
             font-weight: bold;
             color: #8B0000;
+            font-size: 0.65rem;
         }
 
         .allergen-absent {
@@ -955,16 +963,26 @@
                 padding: 20px 15px;
                 margin: 40px 10px;
             }
+            #allergen-chart h2 {
+                font-size: 1.6rem;
+            }
             table {
-                font-size: 0.75rem;
-                min-width: 900px;
+                font-size: 0.65rem;
+                min-width: 850px;
+            }
+            th {
+                font-size: 0.6rem;
             }
             th, td {
-                padding: 6px 4px;
+                padding: 5px 3px;
             }
             th:first-child,
             td:first-child {
-                min-width: 120px;
+                min-width: 110px;
+                font-size: 0.65rem;
+            }
+            .allergen-present {
+                font-size: 0.6rem;
             }
         }
 
@@ -993,19 +1011,25 @@
                 margin: 30px 5px;
             }
             #allergen-chart h2 {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
             }
             table {
-                font-size: 0.7rem;
-                min-width: 800px;
+                font-size: 0.6rem;
+                min-width: 750px;
+            }
+            th {
+                font-size: 0.55rem;
             }
             th, td {
-                padding: 5px 3px;
+                padding: 4px 2px;
             }
             th:first-child,
             td:first-child {
-                min-width: 100px;
-                font-size: 0.65rem;
+                min-width: 90px;
+                font-size: 0.6rem;
+            }
+            .allergen-present {
+                font-size: 0.55rem;
             }
         }
 
@@ -1128,7 +1152,7 @@
                 <div class="item-name">Crispy Tofu (6pcs) <span class="price">£6.95</span></div>
                 <div class="item-description">Golden-fried tofu cubes with a crispy exterior and tender interior, served with peanut sauce.</div>
                 <div class="spiciness"></div>
-                <div class="tags"><span class="tag gf">GF</span> <span class="tag vegan">Vegan</span></div>
+                <div class="tags"><span class="tag gf">Gluten Free</span> <span class="tag vegan">Vegan</span></div>
                 <div class="allergens-section">
                     <div class="allergens-label">Allergens:</div>
                     <div class="allergens-list">Peanut</div>
@@ -1172,7 +1196,7 @@
                 <div class="item-name">Chicken Satay (3pcs) <span class="price">£7.95</span></div>
                 <div class="item-description">Marinated chicken skewers grilled to perfection, served with creamy peanut satay sauce and cucumber relish.</div>
                 <div class="spiciness">🌶️</div>
-                <div class="tags"><span class="tag gf">GF</span></div>
+                <div class="tags"><span class="tag gf">Gluten Free</span></div>
                 <div class="allergens-section">
                     <div class="allergens-label">Allergens:</div>
                     <div class="allergens-list">Mustard, Peanut</div>
@@ -1183,10 +1207,21 @@
                 <div class="item-name">Fish Cake (4pcs) <span class="price">£7.95</span></div>
                 <div class="item-description">Traditional Thai fish cakes made with white fish, red curry paste, and kaffir lime leaves, served with sweet chilli sauce.</div>
                 <div class="spiciness">🌶️</div>
-                <div class="tags"><span class="tag gf">GF</span></div>
+                <div class="tags"><span class="tag gf">Gluten Free</span></div>
                 <div class="allergens-section">
                     <div class="allergens-label">Allergens:</div>
                     <div class="allergens-list">Fish, Soy, Crustacean</div>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-name">Deep Fried Chicken Wings <span class="price">£7.95</span></div>
+                <div class="item-description">Crispy deep-fried chicken wings, perfectly seasoned and golden brown. Served with sweet chilli dipping sauce.</div>
+                <div class="spiciness"></div>
+                <div class="tags"></div>
+                <div class="allergens-section">
+                    <div class="allergens-label">Allergens:</div>
+                    <div class="allergens-list">Wheat, Soy, Molluscs</div>
                 </div>
             </div>
         </div>
@@ -1218,7 +1253,7 @@
                         <div class="protein-details">
                             <span class="protein-allergen">Soybean</span>
                             <span class="tag vegan">Vegan</span>
-                            <span class="tag gf">GF</span>
+                            <span class="tag gf">Gluten Free</span>
                         </div>
                     </div>
                     <div class="protein-option">
@@ -1227,7 +1262,7 @@
                             <span class="protein-price">£14.95</span>
                         </div>
                         <div class="protein-details">
-                            <span class="tag gf">GF</span>
+                            <span class="tag gf">Gluten Free</span>
                         </div>
                     </div>
                     <div class="protein-option">
@@ -1236,7 +1271,7 @@
                             <span class="protein-price">£15.95</span>
                         </div>
                         <div class="protein-details">
-                            <span class="tag gf">GF</span>
+                            <span class="tag gf">Gluten Free</span>
                         </div>
                     </div>
                     <div class="protein-option">
@@ -1246,7 +1281,7 @@
                         </div>
                         <div class="protein-details">
                             <span class="protein-allergen">Crustacean</span>
-                            <span class="tag gf">GF</span>
+                            <span class="tag gf">Gluten Free</span>
                         </div>
                     </div>
                 </div>
@@ -1260,7 +1295,7 @@
                 <div class="item-name">Massaman Chicken Curry <span class="price">£14.95</span></div>
                 <div class="item-description">A rich and mild curry with Persian influences, featuring tender chicken, potatoes, and roasted cashews in a creamy coconut sauce with warm spices like cardamom and cinnamon.</div>
                 <div class="spiciness">🌶️</div>
-                <div class="tags"><span class="tag gf">GF</span></div>
+                <div class="tags"><span class="tag gf">Gluten Free</span></div>
                 <div class="allergens-section">
                     <div class="allergens-label">Allergens:</div>
                     <div class="allergens-list">Cashew nut, Crustacean</div>
@@ -1429,7 +1464,7 @@
                         <div class="protein-details">
                             <span class="protein-allergen">Soybean</span>
                             <span class="tag vegan">Vegan</span>
-                            <span class="tag gf">GF</span>
+                            <span class="tag gf">Gluten Free</span>
                         </div>
                     </div>
                     <div class="protein-option">
@@ -1439,7 +1474,7 @@
                         </div>
                         <div class="protein-details">
                             <span class="protein-allergen">Egg</span>
-                            <span class="tag gf">GF</span>
+                            <span class="tag gf">Gluten Free</span>
                         </div>
                     </div>
                     <div class="protein-option">
@@ -1449,7 +1484,7 @@
                         </div>
                         <div class="protein-details">
                             <span class="protein-allergen">Crustacean</span>
-                            <span class="tag gf">GF</span>
+                            <span class="tag gf">Gluten Free</span>
                         </div>
                     </div>
                 </div>
@@ -1502,7 +1537,7 @@
                 <div class="item-name">Jasmine Rice <span class="price">£3.95</span></div>
                 <div class="item-description">Fragrant long-grain jasmine rice, steamed to perfection. The perfect accompaniment to any curry or stir-fry.</div>
                 <div class="spiciness"></div>
-                <div class="tags"><span class="tag gf">GF</span> <span class="tag vegan">Vegan</span></div>
+                <div class="tags"><span class="tag gf">Gluten Free</span> <span class="tag vegan">Vegan</span></div>
                 <div class="allergens-section">
                     <div class="allergens-label">Allergens:</div>
                     <div class="allergens-list">None</div>
@@ -1513,7 +1548,7 @@
                 <div class="item-name">Sticky Rice <span class="price">£3.95</span></div>
                 <div class="item-description">Traditional glutinous rice, steamed and served warm. A staple in Northern Thai cuisine, perfect for soaking up rich curry sauces.</div>
                 <div class="spiciness"></div>
-                <div class="tags"><span class="tag gf">GF</span> <span class="tag vegan">Vegan</span></div>
+                <div class="tags"><span class="tag gf">Gluten Free</span> <span class="tag vegan">Vegan</span></div>
                 <div class="allergens-section">
                     <div class="allergens-label">Allergens:</div>
                     <div class="allergens-list">None</div>
@@ -1524,7 +1559,7 @@
                 <div class="item-name">Egg Fried Rice <span class="price">£4.50</span></div>
                 <div class="item-description">Classic Thai-style fried rice with scrambled egg, spring onions, and light soy seasoning. Simple, satisfying, and delicious.</div>
                 <div class="spiciness"></div>
-                <div class="tags"><span class="tag gf">GF</span></div>
+                <div class="tags"><span class="tag gf">Gluten Free</span></div>
                 <div class="allergens-section">
                     <div class="allergens-label">Allergens:</div>
                     <div class="allergens-list">Egg</div>
@@ -1558,7 +1593,7 @@
                 <div class="item-name">Spicy Beef Salad <span class="price">£14.95</span></div>
                 <div class="item-description">Tender grilled beef strips on a bed of fresh mixed greens, herbs, and vegetables, dressed with a zesty lime and chilli dressing. Refreshing and full of flavour.</div>
                 <div class="spiciness">🌶️🌶️</div>
-                <div class="tags"><span class="tag gf">GF</span></div>
+                <div class="tags"><span class="tag gf">Gluten Free</span></div>
                 <div class="allergens-section">
                     <div class="allergens-label">Allergens:</div>
                     <div class="allergens-list">Celery</div>
@@ -1569,7 +1604,7 @@
                 <div class="item-name">Papaya Salad <span class="price">£12.95</span></div>
                 <div class="item-description">Som Tam - Shredded green papaya pounded with tomatoes, green beans, peanuts, and dried shrimp in a tangy lime and chilli dressing. A refreshing, crunchy, and spicy classic!</div>
                 <div class="spiciness">🌶️🌶️</div>
-                <div class="tags"><span class="tag gf">GF</span></div>
+                <div class="tags"><span class="tag gf">Gluten Free</span></div>
                 <div class="allergens-section">
                     <div class="allergens-label">Allergens:</div>
                     <div class="allergens-list">Peanut</div>
@@ -1592,7 +1627,7 @@
                 <div class="item-name">Chocolate Brownie <span class="price">£6.95</span></div>
                 <div class="item-description">Rich, fudgy chocolate brownie with a gooey centre. A decadent treat to end your meal.</div>
                 <div class="spiciness"></div>
-                <div class="tags"><span class="tag gf">GF</span></div>
+                <div class="tags"><span class="tag gf">Gluten Free</span></div>
                 <p style="font-size:0.85rem; margin-top:5px; color:#666;">Served with Vanilla Ice Cream</p>
                 <div class="allergens-section">
                     <div class="allergens-label">Allergens:</div>
@@ -1616,7 +1651,7 @@
                 <div class="item-name">Banana Split <span class="price">£6.95</span></div>
                 <div class="item-description">A classic dessert featuring fresh banana, vanilla ice cream, chocolate sauce, and whipped cream. A timeless favourite!</div>
                 <div class="spiciness"></div>
-                <div class="tags"><span class="tag gf">GF</span></div>
+                <div class="tags"><span class="tag gf">Gluten Free</span></div>
                 <div class="allergens-section">
                     <div class="allergens-label">Allergens:</div>
                     <div class="allergens-list">Milk</div>
@@ -1627,7 +1662,7 @@
                 <div class="item-name">Ice Cream <span class="price">£6.95</span></div>
                 <div class="item-description">Creamy, smooth ice cream in classic flavours. A simple and refreshing way to end your meal.</div>
                 <div class="spiciness"></div>
-                <div class="tags"><span class="tag gf">GF</span></div>
+                <div class="tags"><span class="tag gf">Gluten Free</span></div>
                 <p style="font-size:0.85rem; margin-top:5px; color:#666;">Vanilla, Chocolate, or Strawberry</p>
                 <div class="allergens-section">
                     <div class="allergens-label">Allergens:</div>
@@ -1665,7 +1700,7 @@
                 <div class="tags"></div>
                 <div class="allergens-section">
                     <div class="allergens-label">Allergens:</div>
-                    <div class="allergens-list"><em>Ingredients under review</em></div>
+                    <div class="allergens-list">Wheat, Egg, Milk</div>
                 </div>
             </div>
 
@@ -1676,7 +1711,7 @@
                 <div class="tags"></div>
                 <div class="allergens-section">
                     <div class="allergens-label">Allergens:</div>
-                    <div class="allergens-list"><em>Ingredients under review</em></div>
+                    <div class="allergens-list">Wheat, Egg, Milk, Sesame</div>
                 </div>
             </div>
 
@@ -1687,7 +1722,7 @@
                 <div class="tags"></div>
                 <div class="allergens-section">
                     <div class="allergens-label">Allergens:</div>
-                    <div class="allergens-list"><em>Ingredients under review</em></div>
+                    <div class="allergens-list">Wheat, Egg, Milk, Sesame</div>
                 </div>
             </div>
 
@@ -1706,7 +1741,7 @@
                 <div class="item-name">Chunky Chips <span class="price">£3.50</span></div>
                 <div class="item-description">Thick-cut, crispy chips made from premium potatoes. Perfect as a side or snack.</div>
                 <div class="spiciness"></div>
-                <div class="tags"><span class="tag gf">GF</span></div>
+                <div class="tags"><span class="tag gf">Gluten Free</span></div>
                 <div class="allergens-section">
                     <div class="allergens-label">Allergens:</div>
                     <div class="allergens-list">None</div>
@@ -1717,7 +1752,7 @@
                 <div class="item-name">Cheesy Chips <span class="price">£3.95</span></div>
                 <div class="item-description">Golden chips smothered in melted cheese. A comforting and indulgent treat.</div>
                 <div class="spiciness"></div>
-                <div class="tags"><span class="tag gf">GF</span></div>
+                <div class="tags"><span class="tag gf">Gluten Free</span></div>
                 <div class="allergens-section">
                     <div class="allergens-label">Allergens:</div>
                     <div class="allergens-list">Milk</div>
@@ -1728,7 +1763,7 @@
                 <div class="item-name">Sweet Potato Fries <span class="price">£3.95</span></div>
                 <div class="item-description">Crispy sweet potato fries with a naturally sweet flavour. A healthier alternative to regular chips.</div>
                 <div class="spiciness"></div>
-                <div class="tags"><span class="tag gf">GF</span></div>
+                <div class="tags"><span class="tag gf">Gluten Free</span></div>
                 <div class="allergens-section">
                     <div class="allergens-label">Allergens:</div>
                     <div class="allergens-list">None</div>
@@ -1821,32 +1856,60 @@
                 <tr><td>Crispy Duck Roll</td><td></td><td class="allergen-present">Wheat</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Sesame</td><td class="allergen-present">Soy</td><td></td></tr>
                 <tr><td>Chicken Satay</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Mustard</td><td></td><td class="allergen-present">Peanut</td><td></td><td></td><td></td></tr>
                 <tr><td>Fish Cake</td><td></td><td></td><td class="allergen-present">Crab</td><td></td><td class="allergen-present">Fish</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
+                <tr><td>Deep Fried Chicken Wings</td><td></td><td class="allergen-present">Wheat</td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Oyster</td><td></td><td></td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
 
                 <!-- Curries -->
                 <tr><td>Green/Red Curry (Tofu)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
-                <tr><td>Massaman Chicken Curry</td><td></td><td></td><td class="allergen-present">Shrimp Paste</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Cashew</td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>Green/Red Curry (Chicken)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>Green/Red Curry (Beef)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>Green/Red Curry (Prawn)</td><td></td><td></td><td class="allergen-present">Prawn</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>Massaman Chicken Curry</td><td></td><td></td><td class="allergen-present">Shrimp Paste</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Cashew</td><td></td><td></td><td></td><td></td><td></td></tr>
 
                 <!-- Stir Fried -->
-                <tr><td>Stir Fried Chilli Basil</td><td></td><td class="allergen-present">Wheat</td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Oyster</td><td></td><td></td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
-                <tr><td>Stir Fried Oyster Sauce</td><td></td><td class="allergen-present">Wheat</td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Oyster</td><td></td><td></td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
-                <tr><td>Stir Fried Cashew Nut</td><td></td><td class="allergen-present">Wheat</td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Oyster</td><td></td><td class="allergen-present">Cashew</td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
+                <tr><td>Stir Fried Chilli Basil (Tofu)</td><td></td><td class="allergen-present">Wheat</td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Oyster</td><td></td><td></td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
+                <tr><td>Stir Fried Chilli Basil (Chicken)</td><td></td><td class="allergen-present">Wheat</td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Oyster</td><td></td><td></td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
+                <tr><td>Stir Fried Chilli Basil (Beef)</td><td></td><td class="allergen-present">Wheat</td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Oyster</td><td></td><td></td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
+                <tr><td>Stir Fried Chilli Basil (Prawn)</td><td></td><td class="allergen-present">Wheat</td><td class="allergen-present">Prawn</td><td></td><td></td><td></td><td></td><td class="allergen-present">Oyster</td><td></td><td></td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
+                <tr><td>Stir Fried Oyster Sauce (Tofu)</td><td></td><td class="allergen-present">Wheat</td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Oyster</td><td></td><td></td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
+                <tr><td>Stir Fried Oyster Sauce (Chicken)</td><td></td><td class="allergen-present">Wheat</td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Oyster</td><td></td><td></td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
+                <tr><td>Stir Fried Oyster Sauce (Beef)</td><td></td><td class="allergen-present">Wheat</td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Oyster</td><td></td><td></td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
+                <tr><td>Stir Fried Oyster Sauce (Prawn)</td><td></td><td class="allergen-present">Wheat</td><td class="allergen-present">Prawn</td><td></td><td></td><td></td><td></td><td class="allergen-present">Oyster</td><td></td><td></td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
+                <tr><td>Stir Fried Cashew Nut (Tofu)</td><td></td><td class="allergen-present">Wheat</td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Oyster</td><td></td><td class="allergen-present">Cashew</td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
+                <tr><td>Stir Fried Cashew Nut (Chicken)</td><td></td><td class="allergen-present">Wheat</td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Oyster</td><td></td><td class="allergen-present">Cashew</td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
+                <tr><td>Stir Fried Cashew Nut (Beef)</td><td></td><td class="allergen-present">Wheat</td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Oyster</td><td></td><td class="allergen-present">Cashew</td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
+                <tr><td>Stir Fried Cashew Nut (Prawn)</td><td></td><td class="allergen-present">Wheat</td><td class="allergen-present">Prawn</td><td></td><td></td><td></td><td></td><td class="allergen-present">Oyster</td><td></td><td class="allergen-present">Cashew</td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
 
                 <!-- Noodles -->
+                <tr><td>Pad Thai (Tofu)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
                 <tr><td>Pad Thai (Chicken)</td><td></td><td></td><td></td><td class="allergen-present">Egg</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                <tr><td>Drunken Noodle</td><td></td><td class="allergen-present">Wheat</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
+                <tr><td>Pad Thai (Prawn)</td><td></td><td></td><td class="allergen-present">Prawn</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>Drunken Noodle (Tofu)</td><td></td><td class="allergen-present">Wheat</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
+                <tr><td>Drunken Noodle (Chicken)</td><td></td><td class="allergen-present">Wheat</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
+                <tr><td>Drunken Noodle (Prawn)</td><td></td><td class="allergen-present">Wheat</td><td class="allergen-present">Prawn</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
+                <tr><td>Jasmine Rice</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>Sticky Rice</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>Egg Fried Rice</td><td></td><td></td><td></td><td class="allergen-present">Egg</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 
                 <!-- Chef -->
-                <tr><td>Spicy Pork Sausage</td><td></td><td></td><td class="allergen-present">Shrimp</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
+                <tr><td>Northern Thailand Spicy Pork Sausage</td><td></td><td></td><td class="allergen-present">Shrimp</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
                 <tr><td>Spicy Beef Salad</td><td class="allergen-present">Celery</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
                 <tr><td>Papaya Salad</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Peanut</td><td></td><td></td><td></td></tr>
 
                 <!-- Desserts -->
                 <tr><td>Chocolate Brownie</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Milk</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
                 <tr><td>Golden Apple Sundae</td><td></td><td class="allergen-present">Wheat</td><td></td><td></td><td></td><td></td><td class="allergen-present">Milk</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>Banana Split</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Milk</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>Ice Cream</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Milk</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 
                 <!-- Bar -->
                 <tr><td>Battered Cod</td><td></td><td class="allergen-present">Wheat</td><td></td><td></td><td class="allergen-present">Fish</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>Pork Schnitzels</td><td></td><td class="allergen-present">Wheat</td><td></td><td class="allergen-present">Egg</td><td></td><td></td><td class="allergen-present">Milk</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>Aberdeen Angus Beef Burger</td><td></td><td class="allergen-present">Wheat</td><td></td><td class="allergen-present">Egg</td><td></td><td></td><td class="allergen-present">Milk</td><td></td><td></td><td></td><td></td><td class="allergen-present">Sesame</td><td></td><td></td></tr>
+                <tr><td>Chicken Burger</td><td></td><td class="allergen-present">Wheat</td><td></td><td class="allergen-present">Egg</td><td></td><td></td><td class="allergen-present">Milk</td><td></td><td></td><td></td><td></td><td class="allergen-present">Sesame</td><td></td><td></td></tr>
                 <tr><td>Veggie Burger</td><td></td><td class="allergen-present">Wheat</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Mustard</td><td></td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
+                <tr><td>Chunky Chips</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>Cheesy Chips</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Milk</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>Sweet Potato Fries</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 
                 <!-- Kids -->
                 <tr><td>Chicken Goujons</td><td></td><td class="allergen-present">Wheat</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
@@ -1867,8 +1930,8 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Contact Us</h3>
-                <p><strong>Phone:</strong> <a href="tel:+441234567890">+44 (0) 123 456 7890</a></p>
-                <p><strong>Email:</strong> <a href="mailto:info@arthitayathaikitchen.co.uk">info@arthitayathaikitchen.co.uk</a></p>
+                <p><strong>Phone:</strong> <a href="tel:+447805484766">07805 484766</a></p>
+                <p><strong>Email:</strong> <a href="mailto:maewmaew_za@hotmail.com">maewmaew_za@hotmail.com</a></p>
             </div>
             <div class="footer-section">
                 <h3>Opening Hours</h3>
@@ -1878,9 +1941,8 @@
             </div>
             <div class="footer-section">
                 <h3>Location</h3>
-                <p>123 High Street</p>
-                <p>London, UK</p>
-                <p>SW1A 1AA</p>
+                <p>2 Mytchett Rd, Mytchett</p>
+                <p>Camberley GU16 6EZ</p>
             </div>
         </div>
         <div class="footer-bottom">
@@ -2095,6 +2157,40 @@
                 }
             }
         });
+
+        // Sort Allergen Table Alphabetically
+        function sortAllergenTable() {
+            const tbody = document.querySelector('#allergen-chart tbody');
+            if (!tbody) return;
+
+            const rows = Array.from(tbody.querySelectorAll('tr'));
+            
+            // Filter out comment rows and sort by dish name
+            const dataRows = rows.filter(row => {
+                const firstCell = row.querySelector('td');
+                return firstCell && !firstCell.textContent.trim().startsWith('<!--');
+            });
+
+            // Sort rows by dish name (first cell)
+            dataRows.sort((a, b) => {
+                const nameA = a.querySelector('td').textContent.trim().toLowerCase();
+                const nameB = b.querySelector('td').textContent.trim().toLowerCase();
+                return nameA.localeCompare(nameB);
+            });
+
+            // Remove all data rows
+            dataRows.forEach(row => row.remove());
+
+            // Append sorted rows back to tbody
+            dataRows.forEach(row => tbody.appendChild(row));
+        }
+
+        // Sort table when page loads
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', sortAllergenTable);
+        } else {
+            sortAllergenTable();
+        }
     </script>
 </body>
 </html>
