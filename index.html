@@ -353,12 +353,463 @@
             outline-offset: 2px;
         }
 
+        /* Sticky Navigation Bar */
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 12px 0;
+            margin-bottom: 24px;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-link {
+            padding: 8px 16px;
+            color: #8B0000;
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+        }
+
+        .nav-link:hover {
+            background: rgba(255, 215, 0, 0.2);
+            color: #8B0000;
+        }
+
+        .nav-link.active {
+            background: #8B0000;
+            color: #FFD700;
+        }
+
+        /* Search and Filter Bar */
+        .search-filter-bar {
+            max-width: 1200px;
+            margin: 0 auto 32px;
+            padding: 0 20px;
+        }
+
+        .search-container {
+            position: relative;
+            margin-bottom: 16px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 12px 16px 12px 44px;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 12px;
+            font-size: 1rem;
+            background: white;
+            transition: all 0.2s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #FFD700;
+            box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+            font-size: 1.2rem;
+        }
+
+        .filter-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            padding: 8px 16px;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            background: white;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #8B0000;
+            transition: all 0.2s ease;
+        }
+
+        .filter-btn:hover {
+            border-color: #FFD700;
+            background: rgba(255, 215, 0, 0.1);
+        }
+
+        .filter-btn.active {
+            background: #8B0000;
+            color: #FFD700;
+            border-color: #8B0000;
+        }
+
+        .filter-btn.clear {
+            background: #DC143C;
+            color: white;
+            border-color: #DC143C;
+        }
+
+        .filter-btn.clear:hover {
+            background: #B22222;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 48px;
+            height: 48px;
+            background: #8B0000;
+            color: #FFD700;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .back-to-top:hover {
+            background: #DC143C;
+            transform: translateY(-4px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .back-to-top.show {
+            display: flex;
+        }
+
+        /* Footer with Contact Info */
+        .footer {
+            background: linear-gradient(135deg, #8B0000 0%, #DC143C 100%);
+            color: #FFE4B5;
+            padding: 48px 20px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+        }
+
+        .footer-section h3 {
+            color: #FFD700;
+            margin-bottom: 16px;
+            font-size: 1.3rem;
+        }
+
+        .footer-section p {
+            margin: 8px 0;
+            line-height: 1.8;
+        }
+
+        .footer-section a {
+            color: #FFE4B5;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-section a:hover {
+            color: #FFD700;
+        }
+
+        .footer-bottom {
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 215, 0, 0.3);
+            font-size: 0.9rem;
+        }
+
+        /* Hidden class for filtered items */
+        .menu-item.hidden {
+            display: none;
+        }
+
+        .menu-section.hidden {
+            display: none;
+        }
+
+        /* No results message */
+        .no-results {
+            text-align: center;
+            padding: 48px 20px;
+            color: #666;
+            font-size: 1.1rem;
+            display: none;
+        }
+
+        .no-results.show {
+            display: block;
+        }
+
+        /* Accordion for Collapsible Sections */
+        .accordion-toggle {
+            background: transparent;
+            border: none;
+            width: 100%;
+            cursor: pointer;
+            padding: 16px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 2.2rem;
+            color: #8B0000;
+            font-family: 'Pridi', serif;
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-toggle:hover {
+            color: #DC143C;
+        }
+
+        .accordion-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+            color: #FFD700;
+        }
+
+        .accordion-toggle[aria-expanded="true"] .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .accordion-content.open {
+            max-height: 10000px;
+            transition: max-height 0.5s ease-in;
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d1b0e 100%);
+            color: #f5f5f5;
+        }
+
+        body.dark-mode .menu-section {
+            background: rgba(30, 30, 30, 0.95);
+            border-color: rgba(255, 215, 0, 0.3);
+        }
+
+        body.dark-mode .menu-item {
+            background: #2a2a2a;
+            border-color: rgba(255, 215, 0, 0.3);
+            color: #f5f5f5;
+        }
+
+        body.dark-mode .item-name {
+            color: #FFE4B5;
+        }
+
+        body.dark-mode .item-description {
+            color: #ccc;
+        }
+
+        body.dark-mode .sticky-nav {
+            background: rgba(30, 30, 30, 0.98);
+            border-bottom-color: rgba(255, 215, 0, 0.4);
+        }
+
+        body.dark-mode .nav-link {
+            color: #FFE4B5;
+        }
+
+        body.dark-mode .nav-link:hover {
+            background: rgba(255, 215, 0, 0.2);
+            color: #FFD700;
+        }
+
+        body.dark-mode .nav-link.active {
+            background: #8B0000;
+            color: #FFD700;
+        }
+
+        body.dark-mode .search-input {
+            background: #2a2a2a;
+            border-color: rgba(255, 215, 0, 0.4);
+            color: #f5f5f5;
+        }
+
+        body.dark-mode .filter-btn {
+            background: #2a2a2a;
+            border-color: rgba(255, 215, 0, 0.4);
+            color: #FFE4B5;
+        }
+
+        body.dark-mode .filter-btn:hover {
+            background: rgba(255, 215, 0, 0.1);
+        }
+
+        body.dark-mode .protein-option {
+            background: rgba(255, 215, 0, 0.08);
+            border-color: rgba(255, 215, 0, 0.3);
+        }
+
+        body.dark-mode h1, body.dark-mode h2, body.dark-mode h3 {
+            color: #FFD700;
+        }
+
+        body.dark-mode .section-title {
+            color: #FFD700;
+        }
+
+        body.dark-mode .accordion-toggle {
+            color: #FFD700;
+        }
+
+        body.dark-mode .food-image {
+            opacity: 0.9;
+        }
+
+        body.dark-mode .footer {
+            background: linear-gradient(135deg, #1a0a0a 0%, #2d0f0f 100%);
+        }
+
+        body.dark-mode .allergens-section {
+            border-top-color: rgba(255, 215, 0, 0.3);
+        }
+
+        body.dark-mode .separator {
+            background: rgba(255, 215, 0, 0.3);
+        }
+
+        body.dark-mode .no-results {
+            color: #ccc;
+        }
+
+
+        /* Dark Mode Toggle Button */
+        .dark-mode-toggle {
+            position: fixed;
+            top: 80px;
+            right: 24px;
+            width: 48px;
+            height: 48px;
+            background: #8B0000;
+            color: #FFD700;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            z-index: 998;
+        }
+
+        .dark-mode-toggle:hover {
+            background: #DC143C;
+            transform: scale(1.1);
+        }
+
+        /* Food Images */
+        .food-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-item.has-image {
+            padding-top: 0;
+        }
+
+        /* Print Styles */
+        @media print {
+            .sticky-nav,
+            .search-filter-bar,
+            .back-to-top,
+            .dark-mode-toggle,
+            .footer,
+            .no-results {
+                display: none !important;
+            }
+
+            body {
+                background: white;
+                color: black;
+            }
+
+            .menu-section {
+                page-break-inside: avoid;
+                margin: 20px 0;
+                padding: 20px;
+                border: 1px solid #ccc;
+                box-shadow: none;
+            }
+
+            .menu-item {
+                page-break-inside: avoid;
+                margin-bottom: 15px;
+                border: 1px solid #ddd;
+                box-shadow: none;
+            }
+
+            .section-title {
+                color: #8B0000;
+                page-break-after: avoid;
+            }
+
+            .food-image {
+                display: none;
+            }
+
+            a {
+                color: black;
+                text-decoration: underline;
+            }
+
+            .tag {
+                border: 1px solid #333;
+                background: white;
+                color: black;
+            }
+        }
+
         /* Allergen Chart */
         #allergen-chart {
             margin: 60px auto;
             max-width: 1200px;
             background: #fff;
-            padding: 30px;
+            padding: 25px 20px;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
             border: 3px double #FFD700;
@@ -370,7 +821,7 @@
             text-align: center;
             color: #8B0000;
             margin-bottom: 20px;
-            font-size: 2rem;
+            font-size: 1.8rem;
         }
 
         .table-wrapper {
@@ -383,14 +834,14 @@
             width: 100%;
             border-collapse: collapse;
             margin-top: 15px;
-            font-size: 0.85rem;
-            min-width: 1000px;
+            font-size: 0.7rem;
+            min-width: 900px;
             table-layout: auto;
         }
 
         th, td {
             border: 1px solid #DAA520;
-            padding: 8px 6px;
+            padding: 6px 4px;
             text-align: center;
             white-space: nowrap;
         }
@@ -401,9 +852,14 @@
             left: 0;
             background: inherit;
             z-index: 10;
-            min-width: 150px;
+            min-width: 140px;
+            max-width: 200px;
             text-align: left;
-            padding-left: 10px;
+            padding-left: 8px;
+            padding-right: 8px;
+            font-size: 0.7rem;
+            white-space: normal;
+            word-wrap: break-word;
         }
 
         th:first-child {
@@ -423,8 +879,10 @@
             background: #8B0000;
             color: #FFD700;
             font-weight: 600;
+            font-size: 0.65rem;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
+            line-height: 1.2;
         }
 
         td {
@@ -435,6 +893,7 @@
             background: #ffcccc;
             font-weight: bold;
             color: #8B0000;
+            font-size: 0.65rem;
         }
 
         .allergen-absent {
@@ -466,20 +925,64 @@
             .menu-item {
                 padding: 20px;
             }
+            .sticky-nav {
+                padding: 8px 0;
+            }
+            .nav-container {
+                padding: 0 12px;
+                gap: 6px;
+            }
+            .nav-link {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+            .search-filter-bar {
+                padding: 0 12px;
+            }
+            .back-to-top {
+                bottom: 16px;
+                right: 16px;
+                width: 44px;
+                height: 44px;
+            }
+            .dark-mode-toggle {
+                top: 60px;
+                right: 16px;
+                width: 44px;
+                height: 44px;
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            .accordion-toggle {
+                font-size: 1.8rem;
+                padding: 12px 0;
+            }
             #allergen-chart {
                 padding: 20px 15px;
                 margin: 40px 10px;
             }
+            #allergen-chart h2 {
+                font-size: 1.6rem;
+            }
             table {
-                font-size: 0.75rem;
-                min-width: 900px;
+                font-size: 0.65rem;
+                min-width: 850px;
+            }
+            th {
+                font-size: 0.6rem;
             }
             th, td {
-                padding: 6px 4px;
+                padding: 5px 3px;
             }
             th:first-child,
             td:first-child {
-                min-width: 120px;
+                min-width: 110px;
+                font-size: 0.65rem;
+            }
+            .allergen-present {
+                font-size: 0.6rem;
             }
         }
 
@@ -508,19 +1011,25 @@
                 margin: 30px 5px;
             }
             #allergen-chart h2 {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
             }
             table {
-                font-size: 0.7rem;
-                min-width: 800px;
+                font-size: 0.6rem;
+                min-width: 750px;
+            }
+            th {
+                font-size: 0.55rem;
             }
             th, td {
-                padding: 5px 3px;
+                padding: 4px 2px;
             }
             th:first-child,
             td:first-child {
-                min-width: 100px;
-                font-size: 0.65rem;
+                min-width: 90px;
+                font-size: 0.6rem;
+            }
+            .allergen-present {
+                font-size: 0.55rem;
             }
         }
 
@@ -568,15 +1077,54 @@
 
     <!-- Hero Header -->
     <header>
-        <div class="logo">Arthitaya’s Thai Kitchen</div>
+        <div class="logo">Arthitaya's Thai Kitchen</div>
         <p class="tagline">Authentic Flavours from the Heart of Thailand</p>
     </header>
 
     <div class="divider"></div>
 
+    <!-- Sticky Navigation -->
+    <nav class="sticky-nav">
+        <div class="nav-container">
+            <a href="#starters" class="nav-link">Starters</a>
+            <a href="#mains" class="nav-link">Main Courses</a>
+            <a href="#chef" class="nav-link">Chef Recommended</a>
+            <a href="#dessert" class="nav-link">Dessert</a>
+            <a href="#bar" class="nav-link">Bar Menu</a>
+            <a href="#kids" class="nav-link">Kids Menu</a>
+            <a href="#allergen-chart" class="nav-link">Allergen Chart</a>
+        </div>
+    </nav>
+
+    <!-- Search and Filter Bar -->
+    <div class="search-filter-bar">
+        <div class="search-container">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="searchInput" class="search-input" placeholder="Search menu items...">
+        </div>
+        <div class="filter-container">
+            <button class="filter-btn" data-filter="all">All Items</button>
+            <button class="filter-btn" data-filter="vegan">Vegan</button>
+            <button class="filter-btn" data-filter="gf">Gluten Free</button>
+            <button class="filter-btn" data-filter="spicy">Spicy</button>
+            <button class="filter-btn clear" id="clearFilters">Clear Filters</button>
+        </div>
+    </div>
+
+    <!-- No Results Message -->
+    <div class="no-results" id="noResults">
+        <p>No menu items found matching your search or filters.</p>
+        <p style="margin-top: 8px; font-size: 0.9rem;">Try adjusting your search terms or clearing the filters.</p>
+    </div>
+
     <!-- Starters -->
     <section class="menu-section" id="starters">
-        <h2 class="section-title">Starters</h2>
+        <button class="accordion-toggle" aria-expanded="true" aria-controls="starters-content">
+            <span>Starters</span>
+            <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content open" id="starters-content">
+        <h2 class="section-title" style="display: none;">Starters</h2>
         <div class="menu-grid">
             <div class="menu-item">
                 <div class="item-name">Vegetable Spring Roll (4pcs) <span class="price">£6.95</span></div>
@@ -604,7 +1152,7 @@
                 <div class="item-name">Crispy Tofu (6pcs) <span class="price">£6.95</span></div>
                 <div class="item-description">Golden-fried tofu cubes with a crispy exterior and tender interior, served with peanut sauce.</div>
                 <div class="spiciness"></div>
-                <div class="tags"><span class="tag gf">GF</span> <span class="tag vegan">Vegan</span></div>
+                <div class="tags"><span class="tag gf">Gluten Free</span> <span class="tag vegan">Vegan</span></div>
                 <div class="allergens-section">
                     <div class="allergens-label">Allergens:</div>
                     <div class="allergens-list">Peanut</div>
@@ -648,7 +1196,7 @@
                 <div class="item-name">Chicken Satay (3pcs) <span class="price">£7.95</span></div>
                 <div class="item-description">Marinated chicken skewers grilled to perfection, served with creamy peanut satay sauce and cucumber relish.</div>
                 <div class="spiciness">🌶️</div>
-                <div class="tags"><span class="tag gf">GF</span></div>
+                <div class="tags"><span class="tag gf">Gluten Free</span></div>
                 <div class="allergens-section">
                     <div class="allergens-label">Allergens:</div>
                     <div class="allergens-list">Mustard, Peanut</div>
@@ -659,18 +1207,35 @@
                 <div class="item-name">Fish Cake (4pcs) <span class="price">£7.95</span></div>
                 <div class="item-description">Traditional Thai fish cakes made with white fish, red curry paste, and kaffir lime leaves, served with sweet chilli sauce.</div>
                 <div class="spiciness">🌶️</div>
-                <div class="tags"><span class="tag gf">GF</span></div>
+                <div class="tags"><span class="tag gf">Gluten Free</span></div>
                 <div class="allergens-section">
                     <div class="allergens-label">Allergens:</div>
                     <div class="allergens-list">Fish, Soy, Crustacean</div>
                 </div>
             </div>
+
+            <div class="menu-item">
+                <div class="item-name">Deep Fried Chicken Wings <span class="price">£7.95</span></div>
+                <div class="item-description">Crispy deep-fried chicken wings, perfectly seasoned and golden brown. Served with sweet chilli dipping sauce.</div>
+                <div class="spiciness"></div>
+                <div class="tags"></div>
+                <div class="allergens-section">
+                    <div class="allergens-label">Allergens:</div>
+                    <div class="allergens-list">Wheat, Soy, Molluscs</div>
+                </div>
+            </div>
+        </div>
         </div>
     </section>
 
     <!-- Main Courses -->
     <section class="menu-section" id="mains">
-        <h2 class="section-title">Main Courses</h2>
+        <button class="accordion-toggle" aria-expanded="true" aria-controls="mains-content">
+            <span>Main Courses</span>
+            <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content open" id="mains-content">
+        <h2 class="section-title" style="display: none;">Main Courses</h2>
 
         <!-- Curries -->
         <h3 style="color:#8B0000; margin:20px 0 15px; font-size:1.6rem;">A) Curries (Served with Jasmine Rice)</h3>
@@ -688,7 +1253,7 @@
                         <div class="protein-details">
                             <span class="protein-allergen">Soybean</span>
                             <span class="tag vegan">Vegan</span>
-                            <span class="tag gf">GF</span>
+                            <span class="tag gf">Gluten Free</span>
                         </div>
                     </div>
                     <div class="protein-option">
@@ -697,7 +1262,7 @@
                             <span class="protein-price">£14.95</span>
                         </div>
                         <div class="protein-details">
-                            <span class="tag gf">GF</span>
+                            <span class="tag gf">Gluten Free</span>
                         </div>
                     </div>
                     <div class="protein-option">
@@ -706,7 +1271,7 @@
                             <span class="protein-price">£15.95</span>
                         </div>
                         <div class="protein-details">
-                            <span class="tag gf">GF</span>
+                            <span class="tag gf">Gluten Free</span>
                         </div>
                     </div>
                     <div class="protein-option">
@@ -716,7 +1281,7 @@
                         </div>
                         <div class="protein-details">
                             <span class="protein-allergen">Crustacean</span>
-                            <span class="tag gf">GF</span>
+                            <span class="tag gf">Gluten Free</span>
                         </div>
                     </div>
                 </div>
@@ -730,7 +1295,7 @@
                 <div class="item-name">Massaman Chicken Curry <span class="price">£14.95</span></div>
                 <div class="item-description">A rich and mild curry with Persian influences, featuring tender chicken, potatoes, and roasted cashews in a creamy coconut sauce with warm spices like cardamom and cinnamon.</div>
                 <div class="spiciness">🌶️</div>
-                <div class="tags"><span class="tag gf">GF</span></div>
+                <div class="tags"><span class="tag gf">Gluten Free</span></div>
                 <div class="allergens-section">
                     <div class="allergens-label">Allergens:</div>
                     <div class="allergens-list">Cashew nut, Crustacean</div>
@@ -899,7 +1464,7 @@
                         <div class="protein-details">
                             <span class="protein-allergen">Soybean</span>
                             <span class="tag vegan">Vegan</span>
-                            <span class="tag gf">GF</span>
+                            <span class="tag gf">Gluten Free</span>
                         </div>
                     </div>
                     <div class="protein-option">
@@ -909,7 +1474,7 @@
                         </div>
                         <div class="protein-details">
                             <span class="protein-allergen">Egg</span>
-                            <span class="tag gf">GF</span>
+                            <span class="tag gf">Gluten Free</span>
                         </div>
                     </div>
                     <div class="protein-option">
@@ -919,7 +1484,7 @@
                         </div>
                         <div class="protein-details">
                             <span class="protein-allergen">Crustacean</span>
-                            <span class="tag gf">GF</span>
+                            <span class="tag gf">Gluten Free</span>
                         </div>
                     </div>
                 </div>
@@ -972,7 +1537,7 @@
                 <div class="item-name">Jasmine Rice <span class="price">£3.95</span></div>
                 <div class="item-description">Fragrant long-grain jasmine rice, steamed to perfection. The perfect accompaniment to any curry or stir-fry.</div>
                 <div class="spiciness"></div>
-                <div class="tags"><span class="tag gf">GF</span> <span class="tag vegan">Vegan</span></div>
+                <div class="tags"><span class="tag gf">Gluten Free</span> <span class="tag vegan">Vegan</span></div>
                 <div class="allergens-section">
                     <div class="allergens-label">Allergens:</div>
                     <div class="allergens-list">None</div>
@@ -983,7 +1548,7 @@
                 <div class="item-name">Sticky Rice <span class="price">£3.95</span></div>
                 <div class="item-description">Traditional glutinous rice, steamed and served warm. A staple in Northern Thai cuisine, perfect for soaking up rich curry sauces.</div>
                 <div class="spiciness"></div>
-                <div class="tags"><span class="tag gf">GF</span> <span class="tag vegan">Vegan</span></div>
+                <div class="tags"><span class="tag gf">Gluten Free</span> <span class="tag vegan">Vegan</span></div>
                 <div class="allergens-section">
                     <div class="allergens-label">Allergens:</div>
                     <div class="allergens-list">None</div>
@@ -994,18 +1559,24 @@
                 <div class="item-name">Egg Fried Rice <span class="price">£4.50</span></div>
                 <div class="item-description">Classic Thai-style fried rice with scrambled egg, spring onions, and light soy seasoning. Simple, satisfying, and delicious.</div>
                 <div class="spiciness"></div>
-                <div class="tags"><span class="tag gf">GF</span></div>
+                <div class="tags"><span class="tag gf">Gluten Free</span></div>
                 <div class="allergens-section">
                     <div class="allergens-label">Allergens:</div>
                     <div class="allergens-list">Egg</div>
                 </div>
             </div>
         </div>
+        </div>
     </section>
 
     <!-- Chef Recommended -->
     <section class="menu-section" id="chef">
-        <h2 class="section-title">Chef Recommended</h2>
+        <button class="accordion-toggle" aria-expanded="true" aria-controls="chef-content">
+            <span>Chef Recommended</span>
+            <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content open" id="chef-content">
+        <h2 class="section-title" style="display: none;">Chef Recommended</h2>
         <div class="menu-grid">
             <div class="menu-item">
                 <div class="item-name">Northern Thailand Spicy Pork Sausage <span class="price">£8.95</span></div>
@@ -1022,7 +1593,7 @@
                 <div class="item-name">Spicy Beef Salad <span class="price">£14.95</span></div>
                 <div class="item-description">Tender grilled beef strips on a bed of fresh mixed greens, herbs, and vegetables, dressed with a zesty lime and chilli dressing. Refreshing and full of flavour.</div>
                 <div class="spiciness">🌶️🌶️</div>
-                <div class="tags"><span class="tag gf">GF</span></div>
+                <div class="tags"><span class="tag gf">Gluten Free</span></div>
                 <div class="allergens-section">
                     <div class="allergens-label">Allergens:</div>
                     <div class="allergens-list">Celery</div>
@@ -1033,24 +1604,30 @@
                 <div class="item-name">Papaya Salad <span class="price">£12.95</span></div>
                 <div class="item-description">Som Tam - Shredded green papaya pounded with tomatoes, green beans, peanuts, and dried shrimp in a tangy lime and chilli dressing. A refreshing, crunchy, and spicy classic!</div>
                 <div class="spiciness">🌶️🌶️</div>
-                <div class="tags"><span class="tag gf">GF</span></div>
+                <div class="tags"><span class="tag gf">Gluten Free</span></div>
                 <div class="allergens-section">
                     <div class="allergens-label">Allergens:</div>
                     <div class="allergens-list">Peanut</div>
                 </div>
             </div>
         </div>
+        </div>
     </section>
 
     <!-- Dessert -->
     <section class="menu-section" id="dessert">
-        <h2 class="section-title">Dessert</h2>
+        <button class="accordion-toggle" aria-expanded="true" aria-controls="dessert-content">
+            <span>Dessert</span>
+            <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content open" id="dessert-content">
+        <h2 class="section-title" style="display: none;">Dessert</h2>
         <div class="menu-grid">
             <div class="menu-item">
                 <div class="item-name">Chocolate Brownie <span class="price">£6.95</span></div>
                 <div class="item-description">Rich, fudgy chocolate brownie with a gooey centre. A decadent treat to end your meal.</div>
                 <div class="spiciness"></div>
-                <div class="tags"><span class="tag gf">GF</span></div>
+                <div class="tags"><span class="tag gf">Gluten Free</span></div>
                 <p style="font-size:0.85rem; margin-top:5px; color:#666;">Served with Vanilla Ice Cream</p>
                 <div class="allergens-section">
                     <div class="allergens-label">Allergens:</div>
@@ -1074,7 +1651,7 @@
                 <div class="item-name">Banana Split <span class="price">£6.95</span></div>
                 <div class="item-description">A classic dessert featuring fresh banana, vanilla ice cream, chocolate sauce, and whipped cream. A timeless favourite!</div>
                 <div class="spiciness"></div>
-                <div class="tags"><span class="tag gf">GF</span></div>
+                <div class="tags"><span class="tag gf">Gluten Free</span></div>
                 <div class="allergens-section">
                     <div class="allergens-label">Allergens:</div>
                     <div class="allergens-list">Milk</div>
@@ -1085,7 +1662,7 @@
                 <div class="item-name">Ice Cream <span class="price">£6.95</span></div>
                 <div class="item-description">Creamy, smooth ice cream in classic flavours. A simple and refreshing way to end your meal.</div>
                 <div class="spiciness"></div>
-                <div class="tags"><span class="tag gf">GF</span></div>
+                <div class="tags"><span class="tag gf">Gluten Free</span></div>
                 <p style="font-size:0.85rem; margin-top:5px; color:#666;">Vanilla, Chocolate, or Strawberry</p>
                 <div class="allergens-section">
                     <div class="allergens-label">Allergens:</div>
@@ -1093,11 +1670,17 @@
                 </div>
             </div>
         </div>
+        </div>
     </section>
 
     <!-- Bar Menu -->
     <section class="menu-section" id="bar">
-        <h2 class="section-title">Bar Menu</h2>
+        <button class="accordion-toggle" aria-expanded="true" aria-controls="bar-content">
+            <span>Bar Menu</span>
+            <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content open" id="bar-content">
+        <h2 class="section-title" style="display: none;">Bar Menu</h2>
         <div class="menu-grid">
             <div class="menu-item">
                 <div class="item-name">Battered Cod with Chips & Mushy Peas <span class="price">£14.95</span></div>
@@ -1117,7 +1700,7 @@
                 <div class="tags"></div>
                 <div class="allergens-section">
                     <div class="allergens-label">Allergens:</div>
-                    <div class="allergens-list"><em>Ingredients under review</em></div>
+                    <div class="allergens-list">Wheat, Egg, Milk</div>
                 </div>
             </div>
 
@@ -1128,7 +1711,7 @@
                 <div class="tags"></div>
                 <div class="allergens-section">
                     <div class="allergens-label">Allergens:</div>
-                    <div class="allergens-list"><em>Ingredients under review</em></div>
+                    <div class="allergens-list">Wheat, Egg, Milk, Sesame</div>
                 </div>
             </div>
 
@@ -1139,7 +1722,7 @@
                 <div class="tags"></div>
                 <div class="allergens-section">
                     <div class="allergens-label">Allergens:</div>
-                    <div class="allergens-list"><em>Ingredients under review</em></div>
+                    <div class="allergens-list">Wheat, Egg, Milk, Sesame</div>
                 </div>
             </div>
 
@@ -1158,7 +1741,7 @@
                 <div class="item-name">Chunky Chips <span class="price">£3.50</span></div>
                 <div class="item-description">Thick-cut, crispy chips made from premium potatoes. Perfect as a side or snack.</div>
                 <div class="spiciness"></div>
-                <div class="tags"><span class="tag gf">GF</span></div>
+                <div class="tags"><span class="tag gf">Gluten Free</span></div>
                 <div class="allergens-section">
                     <div class="allergens-label">Allergens:</div>
                     <div class="allergens-list">None</div>
@@ -1169,7 +1752,7 @@
                 <div class="item-name">Cheesy Chips <span class="price">£3.95</span></div>
                 <div class="item-description">Golden chips smothered in melted cheese. A comforting and indulgent treat.</div>
                 <div class="spiciness"></div>
-                <div class="tags"><span class="tag gf">GF</span></div>
+                <div class="tags"><span class="tag gf">Gluten Free</span></div>
                 <div class="allergens-section">
                     <div class="allergens-label">Allergens:</div>
                     <div class="allergens-list">Milk</div>
@@ -1180,18 +1763,24 @@
                 <div class="item-name">Sweet Potato Fries <span class="price">£3.95</span></div>
                 <div class="item-description">Crispy sweet potato fries with a naturally sweet flavour. A healthier alternative to regular chips.</div>
                 <div class="spiciness"></div>
-                <div class="tags"><span class="tag gf">GF</span></div>
+                <div class="tags"><span class="tag gf">Gluten Free</span></div>
                 <div class="allergens-section">
                     <div class="allergens-label">Allergens:</div>
                     <div class="allergens-list">None</div>
                 </div>
             </div>
         </div>
+        </div>
     </section>
 
     <!-- Kids Menu -->
     <section class="menu-section" id="kids">
-        <h2 class="section-title">Kids Menu £7.95</h2>
+        <button class="accordion-toggle" aria-expanded="true" aria-controls="kids-content">
+            <span>Kids Menu £7.95</span>
+            <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content open" id="kids-content">
+        <h2 class="section-title" style="display: none;">Kids Menu £7.95</h2>
         <p style="text-align:center; margin-bottom:20px; color:#555;">Served with chips, peas or salad. Add £1 for Sweet Potato Fries.</p>
         <div class="menu-grid">
             <div class="menu-item">
@@ -1226,6 +1815,7 @@
                     <div class="allergens-list">Wheat, Milk</div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
 
@@ -1266,32 +1856,60 @@
                 <tr><td>Crispy Duck Roll</td><td></td><td class="allergen-present">Wheat</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Sesame</td><td class="allergen-present">Soy</td><td></td></tr>
                 <tr><td>Chicken Satay</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Mustard</td><td></td><td class="allergen-present">Peanut</td><td></td><td></td><td></td></tr>
                 <tr><td>Fish Cake</td><td></td><td></td><td class="allergen-present">Crab</td><td></td><td class="allergen-present">Fish</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
+                <tr><td>Deep Fried Chicken Wings</td><td></td><td class="allergen-present">Wheat</td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Oyster</td><td></td><td></td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
 
                 <!-- Curries -->
                 <tr><td>Green/Red Curry (Tofu)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
-                <tr><td>Massaman Chicken Curry</td><td></td><td></td><td class="allergen-present">Shrimp Paste</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Cashew</td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>Green/Red Curry (Chicken)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>Green/Red Curry (Beef)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>Green/Red Curry (Prawn)</td><td></td><td></td><td class="allergen-present">Prawn</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>Massaman Chicken Curry</td><td></td><td></td><td class="allergen-present">Shrimp Paste</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Cashew</td><td></td><td></td><td></td><td></td><td></td></tr>
 
                 <!-- Stir Fried -->
-                <tr><td>Stir Fried Chilli Basil</td><td></td><td class="allergen-present">Wheat</td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Oyster</td><td></td><td></td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
-                <tr><td>Stir Fried Oyster Sauce</td><td></td><td class="allergen-present">Wheat</td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Oyster</td><td></td><td></td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
-                <tr><td>Stir Fried Cashew Nut</td><td></td><td class="allergen-present">Wheat</td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Oyster</td><td></td><td class="allergen-present">Cashew</td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
+                <tr><td>Stir Fried Chilli Basil (Tofu)</td><td></td><td class="allergen-present">Wheat</td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Oyster</td><td></td><td></td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
+                <tr><td>Stir Fried Chilli Basil (Chicken)</td><td></td><td class="allergen-present">Wheat</td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Oyster</td><td></td><td></td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
+                <tr><td>Stir Fried Chilli Basil (Beef)</td><td></td><td class="allergen-present">Wheat</td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Oyster</td><td></td><td></td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
+                <tr><td>Stir Fried Chilli Basil (Prawn)</td><td></td><td class="allergen-present">Wheat</td><td class="allergen-present">Prawn</td><td></td><td></td><td></td><td></td><td class="allergen-present">Oyster</td><td></td><td></td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
+                <tr><td>Stir Fried Oyster Sauce (Tofu)</td><td></td><td class="allergen-present">Wheat</td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Oyster</td><td></td><td></td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
+                <tr><td>Stir Fried Oyster Sauce (Chicken)</td><td></td><td class="allergen-present">Wheat</td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Oyster</td><td></td><td></td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
+                <tr><td>Stir Fried Oyster Sauce (Beef)</td><td></td><td class="allergen-present">Wheat</td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Oyster</td><td></td><td></td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
+                <tr><td>Stir Fried Oyster Sauce (Prawn)</td><td></td><td class="allergen-present">Wheat</td><td class="allergen-present">Prawn</td><td></td><td></td><td></td><td></td><td class="allergen-present">Oyster</td><td></td><td></td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
+                <tr><td>Stir Fried Cashew Nut (Tofu)</td><td></td><td class="allergen-present">Wheat</td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Oyster</td><td></td><td class="allergen-present">Cashew</td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
+                <tr><td>Stir Fried Cashew Nut (Chicken)</td><td></td><td class="allergen-present">Wheat</td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Oyster</td><td></td><td class="allergen-present">Cashew</td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
+                <tr><td>Stir Fried Cashew Nut (Beef)</td><td></td><td class="allergen-present">Wheat</td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Oyster</td><td></td><td class="allergen-present">Cashew</td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
+                <tr><td>Stir Fried Cashew Nut (Prawn)</td><td></td><td class="allergen-present">Wheat</td><td class="allergen-present">Prawn</td><td></td><td></td><td></td><td></td><td class="allergen-present">Oyster</td><td></td><td class="allergen-present">Cashew</td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
 
                 <!-- Noodles -->
+                <tr><td>Pad Thai (Tofu)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
                 <tr><td>Pad Thai (Chicken)</td><td></td><td></td><td></td><td class="allergen-present">Egg</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                <tr><td>Drunken Noodle</td><td></td><td class="allergen-present">Wheat</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
+                <tr><td>Pad Thai (Prawn)</td><td></td><td></td><td class="allergen-present">Prawn</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>Drunken Noodle (Tofu)</td><td></td><td class="allergen-present">Wheat</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
+                <tr><td>Drunken Noodle (Chicken)</td><td></td><td class="allergen-present">Wheat</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
+                <tr><td>Drunken Noodle (Prawn)</td><td></td><td class="allergen-present">Wheat</td><td class="allergen-present">Prawn</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
+                <tr><td>Jasmine Rice</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>Sticky Rice</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>Egg Fried Rice</td><td></td><td></td><td></td><td class="allergen-present">Egg</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 
                 <!-- Chef -->
-                <tr><td>Spicy Pork Sausage</td><td></td><td></td><td class="allergen-present">Shrimp</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
+                <tr><td>Northern Thailand Spicy Pork Sausage</td><td></td><td></td><td class="allergen-present">Shrimp</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
                 <tr><td>Spicy Beef Salad</td><td class="allergen-present">Celery</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
                 <tr><td>Papaya Salad</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Peanut</td><td></td><td></td><td></td></tr>
 
                 <!-- Desserts -->
                 <tr><td>Chocolate Brownie</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Milk</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
                 <tr><td>Golden Apple Sundae</td><td></td><td class="allergen-present">Wheat</td><td></td><td></td><td></td><td></td><td class="allergen-present">Milk</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>Banana Split</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Milk</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>Ice Cream</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Milk</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 
                 <!-- Bar -->
                 <tr><td>Battered Cod</td><td></td><td class="allergen-present">Wheat</td><td></td><td></td><td class="allergen-present">Fish</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>Pork Schnitzels</td><td></td><td class="allergen-present">Wheat</td><td></td><td class="allergen-present">Egg</td><td></td><td></td><td class="allergen-present">Milk</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>Aberdeen Angus Beef Burger</td><td></td><td class="allergen-present">Wheat</td><td></td><td class="allergen-present">Egg</td><td></td><td></td><td class="allergen-present">Milk</td><td></td><td></td><td></td><td></td><td class="allergen-present">Sesame</td><td></td><td></td></tr>
+                <tr><td>Chicken Burger</td><td></td><td class="allergen-present">Wheat</td><td></td><td class="allergen-present">Egg</td><td></td><td></td><td class="allergen-present">Milk</td><td></td><td></td><td></td><td></td><td class="allergen-present">Sesame</td><td></td><td></td></tr>
                 <tr><td>Veggie Burger</td><td></td><td class="allergen-present">Wheat</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Mustard</td><td></td><td></td><td></td><td class="allergen-present">Soy</td><td></td></tr>
+                <tr><td>Chunky Chips</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>Cheesy Chips</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="allergen-present">Milk</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>Sweet Potato Fries</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 
                 <!-- Kids -->
                 <tr><td>Chicken Goujons</td><td></td><td class="allergen-present">Wheat</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
@@ -1307,16 +1925,272 @@
         </p>
     </section>
 
+    <!-- Footer with Contact Information -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><strong>Phone:</strong> <a href="tel:+447805484766">07805 484766</a></p>
+                <p><strong>Email:</strong> <a href="mailto:maewmaew_za@hotmail.com">maewmaew_za@hotmail.com</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Opening Hours</h3>
+                <p><strong>Monday - Thursday:</strong> 12:00 - 22:00</p>
+                <p><strong>Friday - Saturday:</strong> 12:00 - 23:00</p>
+                <p><strong>Sunday:</strong> 12:00 - 21:00</p>
+            </div>
+            <div class="footer-section">
+                <h3>Location</h3>
+                <p>2 Mytchett Rd, Mytchett</p>
+                <p>Camberley GU16 6EZ</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Arthitaya's Thai Kitchen. All rights reserved.</p>
+            <p style="margin-top: 8px;">Authentic Thai Cuisine | Made with ❤️</p>
+        </div>
+    </footer>
+
+    <!-- Dark Mode Toggle -->
+    <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">🌙</button>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
     <script>
-        // Optional: Add smooth scroll for section navigation
+        // Smooth scroll for section navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Update active nav link
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                }
             });
         });
+
+        // Back to Top Button
+        const backToTopBtn = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Search Functionality
+        const searchInput = document.getElementById('searchInput');
+        const menuItems = document.querySelectorAll('.menu-item');
+        const menuSections = document.querySelectorAll('.menu-section');
+        const noResults = document.getElementById('noResults');
+
+        function performSearch() {
+            const searchTerm = searchInput.value.toLowerCase().trim();
+            let visibleCount = 0;
+
+            menuItems.forEach(item => {
+                const itemName = item.querySelector('.item-name')?.textContent.toLowerCase() || '';
+                const itemDescription = item.querySelector('.item-description')?.textContent.toLowerCase() || '';
+                const matchesSearch = !searchTerm || itemName.includes(searchTerm) || itemDescription.includes(searchTerm);
+                
+                // Check active filters
+                const isVegan = item.querySelector('.tag.vegan') !== null;
+                const isGF = item.querySelector('.tag.gf') !== null;
+                const hasSpicy = item.querySelector('.spiciness')?.textContent.includes('🌶️') || false;
+                
+                const activeFilters = Array.from(document.querySelectorAll('.filter-btn.active'))
+                    .map(btn => btn.dataset.filter)
+                    .filter(filter => filter !== 'all');
+                
+                let matchesFilters = true;
+                if (activeFilters.length > 0) {
+                    matchesFilters = activeFilters.every(filter => {
+                        if (filter === 'vegan') return isVegan;
+                        if (filter === 'gf') return isGF;
+                        if (filter === 'spicy') return hasSpicy;
+                        return true;
+                    });
+                }
+                
+                if (matchesSearch && matchesFilters) {
+                    item.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+
+            // Show/hide sections based on visible items
+            menuSections.forEach(section => {
+                const sectionItems = section.querySelectorAll('.menu-item:not(.hidden)');
+                if (sectionItems.length === 0 && section.id !== 'allergen-chart') {
+                    section.classList.add('hidden');
+                } else {
+                    section.classList.remove('hidden');
+                }
+            });
+
+            // Show no results message
+            if (visibleCount === 0) {
+                noResults.classList.add('show');
+            } else {
+                noResults.classList.remove('show');
+            }
+        }
+
+        searchInput.addEventListener('input', performSearch);
+
+        // Filter Buttons
+        const filterButtons = document.querySelectorAll('.filter-btn[data-filter]');
+        
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (btn.dataset.filter === 'all') {
+                    // Clear all filters
+                    filterButtons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                } else {
+                    // Toggle filter
+                    const allBtn = document.querySelector('.filter-btn[data-filter="all"]');
+                    allBtn.classList.remove('active');
+                    btn.classList.toggle('active');
+                }
+                performSearch();
+            });
+        });
+
+        // Clear Filters Button
+        document.getElementById('clearFilters').addEventListener('click', () => {
+            searchInput.value = '';
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            document.querySelector('.filter-btn[data-filter="all"]').classList.add('active');
+            performSearch();
+        });
+
+        // Update active nav link on scroll
+        const sections = document.querySelectorAll('.menu-section, #allergen-chart');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Initialize - show all items
+        document.querySelector('.filter-btn[data-filter="all"]').classList.add('active');
+
+        // Accordion Functionality
+        document.querySelectorAll('.accordion-toggle').forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+                const content = document.getElementById(toggle.getAttribute('aria-controls'));
+                
+                // Toggle state
+                toggle.setAttribute('aria-expanded', !isExpanded);
+                
+                if (isExpanded) {
+                    content.classList.remove('open');
+                } else {
+                    content.classList.add('open');
+                }
+            });
+        });
+
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+        
+        // Check for saved preference or system preference
+        const currentTheme = localStorage.getItem('theme') || 
+            (prefersDark.matches ? 'dark' : 'light');
+        
+        if (currentTheme === 'dark') {
+            document.body.classList.add('dark-mode');
+            darkModeToggle.textContent = '☀️';
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            darkModeToggle.textContent = isDark ? '☀️' : '🌙';
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
+
+        // Listen for system theme changes
+        prefersDark.addEventListener('change', (e) => {
+            if (!localStorage.getItem('theme')) {
+                if (e.matches) {
+                    document.body.classList.add('dark-mode');
+                    darkModeToggle.textContent = '☀️';
+                } else {
+                    document.body.classList.remove('dark-mode');
+                    darkModeToggle.textContent = '🌙';
+                }
+            }
+        });
+
+        // Sort Allergen Table Alphabetically
+        function sortAllergenTable() {
+            const tbody = document.querySelector('#allergen-chart tbody');
+            if (!tbody) return;
+
+            const rows = Array.from(tbody.querySelectorAll('tr'));
+            
+            // Filter out comment rows and sort by dish name
+            const dataRows = rows.filter(row => {
+                const firstCell = row.querySelector('td');
+                return firstCell && !firstCell.textContent.trim().startsWith('<!--');
+            });
+
+            // Sort rows by dish name (first cell)
+            dataRows.sort((a, b) => {
+                const nameA = a.querySelector('td').textContent.trim().toLowerCase();
+                const nameB = b.querySelector('td').textContent.trim().toLowerCase();
+                return nameA.localeCompare(nameB);
+            });
+
+            // Remove all data rows
+            dataRows.forEach(row => row.remove());
+
+            // Append sorted rows back to tbody
+            dataRows.forEach(row => tbody.appendChild(row));
+        }
+
+        // Sort table when page loads
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', sortAllergenTable);
+        } else {
+            sortAllergenTable();
+        }
     </script>
 </body>
 </html>
